@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Phytogold</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <script src='js/pixi.min.js'></script>
+</head>
+<body>
+    <div class="topnav">
+            <div id="logo">
+                <img src="./img/logo.png"></img>
+            </div>
+            <div id="nav">
+                <a class="active" href="#home">Home</a>
+                <a href="products">Products</a>
+                <a href="contact">Contact</a>
+                <a href="about">About</a>
+            </div>
+    </div>
+
+    <script>
+        let app = new PIXI.Application({width: window.innerWidth, height: window.innerHeight});
+        document.body.appendChild(app.view);
+        
+        let img = new PIXI.Sprite.from("img/websiteimage.png");
+        img.width = window.innerWidth;
+        img.height = window.innerHeight;
+        app.stage.addChild(img);
+
+        depthMap = new PIXI.Sprite.from("img/websiteimage_depth.png");
+        app.stage.addChild(depthMap);
+
+        displacementFilter = new PIXI.filters.DisplacementFilter(depthMap);
+        app.stage.filters = [displacementFilter];
+
+        window.onmousemove = function(e) {
+            displacementFilter.scale.x = (window.innerWidth / 2 - e.clientX) /20;
+            displacementFilter.scale.y = (window.innerHeight / 2 - e.clientY) /20;
+        }
+    </script>
+
+
+</body>
+</html>

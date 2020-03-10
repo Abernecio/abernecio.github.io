@@ -1,0 +1,62 @@
+/* Importar Fontes */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+/* Body */
+body {
+    margin: 0;
+    background-image: url(img/teste.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Barra */
+.topnav {
+    background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
+    overflow: hidden;
+    padding: 10px 0px 10px 0px;
+}
+
+/* Icone da Barra */
+.topnav img {
+    height: 68px;
+    padding-left: 35px;
+    vertical-align: top;
+}
+
+/* Wrapper do Icone da Barra */
+#logo {
+    float: left;
+}
+
+/* Links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Ao passar o rato num link... */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+/* Link Activo */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+/* Wrapper dos Botões */
+#nav {
+    overflow: hidden;
+    float: right;
+    padding: 10px 35px 10px 0px;
+    height: 100%;
+}
+
